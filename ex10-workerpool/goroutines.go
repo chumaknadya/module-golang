@@ -22,7 +22,7 @@ func worker(id int, wg *sync.WaitGroup, jobs <-chan string) {
 }
 
 func Run(poolSize int) {
-	jobs := make(chan string, 13)
+	jobs := make(chan string, poolSize)
 	var wg sync.WaitGroup
 	id := 1
 	scanner := bufio.NewScanner(os.Stdin)
